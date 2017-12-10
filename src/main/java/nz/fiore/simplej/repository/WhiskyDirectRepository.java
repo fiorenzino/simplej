@@ -4,15 +4,13 @@ import io.vertx.core.AsyncResult;
 import io.vertx.core.Future;
 import io.vertx.core.Handler;
 import io.vertx.core.Vertx;
-import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.core.logging.Logger;
 import io.vertx.core.logging.LoggerFactory;
-import io.vertx.ext.jpa.JPAClient;
-import io.vertx.ext.jpa.sql.JPAConnection;
-import io.vertx.ext.jpa.util.RestrinctionHandler;
 import io.vertx.ext.sql.ResultSet;
 import io.vertx.ext.sql.UpdateResult;
+import nz.fiore.vertx.ext.jpa.JPAClient;
+import nz.fiore.vertx.ext.jpa.util.RestrinctionHandler;
 
 /**
  * Created by fiorenzo on 16/04/17.
@@ -88,7 +86,7 @@ public class WhiskyDirectRepository
                params.put("name", "%" + params.getString("name") + "%");
                separator = " and ";
             }
-             if (params.getString("collection_name") != null)
+            if (params.getString("collection_name") != null)
             {
                toSql.append(separator).append(alias).append(".collection_name LIKE :collection_name ");
                params.put("collection_name", "%" + params.getString("collection_name") + "%");

@@ -1,3 +1,5 @@
+package nz.fiore.vertx.test;
+
 import nz.fiore.simplej.model.Whisky;
 import org.junit.Test;
 
